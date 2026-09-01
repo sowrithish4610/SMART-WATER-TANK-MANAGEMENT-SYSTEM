@@ -1,0 +1,31 @@
+# ARM Toolchain (Keil MDK or arm-none-eabi-gcc)
+*.uvopt
+*.uvproj
+*.uvguix.*
+*.uvproj.saved
+*.crf
+*.tra
+*.htm
+*.dep
+*.icf
+*.sct
+
+# Build output
+*.o
+*.obj
+*.elf
+*.axf
+*.bin
+*.hex
+*.map
+*.lst
+*.out
+build.log
+link.log
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

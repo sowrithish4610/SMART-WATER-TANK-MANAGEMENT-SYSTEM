@@ -1,0 +1,43 @@
+# Build artefacts
+*.o
+*.obj
+*.elf
+*.axf
+*.bin
+*.hex
+*.map
+*.lst
+*.out
+
+# Keil / µVision
+*.uvguix.*
+*.uvopt
+*.uvproj.saved
+*.crf
+*.tra
+*.htm
+*.dep
+*.icf
+*.sct
+
+# Tooling junk
+build.log
+link.log
+compile.log
+out.txt
+build.err
+build.v.log
+result.txt
+*.bat
+strip-prefix.ps1
+test-build.ps1
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Local sanity-check stub header (replace with vendor lpc21xx.h on real builds)
+lpc21xx.h
