@@ -30,28 +30,42 @@ static int last_logged_mode = -1;
 static int last_logged_pump = -1;
 
 static void set_pump(int on){
-    if(on){
+    if(on)
+    {
         PWMMR2 = 2000;
-    }else{
+    }
+    else
+    {
         PWMMR2 = 1000;
     }
     PWMLER = (1<<2);
 }
 
 static void log_status(int mode, int pump_on){
-    if(mode != last_logged_mode){
-        if(mode == 0) uart0_tx_string("Mode: AUTO   | ");
-        else          uart0_tx_string("Mode: MANUAL | ");
+    if(mode != last_logged_mode)
+    {
+        if(mode == 0) 
+            uart0_tx_string("Mode: AUTO   | ");
+        else          
+            uart0_tx_string("Mode: MANUAL | ");
         last_logged_mode = mode;
         last_logged_pump = -1;
     }
-    if(pump_on != last_logged_pump){
-        if(mode == 0){
-            if(pump_on) uart0_tx_string("Pump: ON  (Filling)\r\n");
-            else        uart0_tx_string("Pump: OFF (Full)\r\n");
-        }else{
-            if(pump_on) uart0_tx_string("Pump: FORCED ON\r\n");
-            else        uart0_tx_string("Pump: FORCED OFF\r\n");
+    if(pump_on != last_logged_pump)
+    {
+        if(mode == 0)
+        {
+            if(pump_on) 
+                uart0_tx_string("Pump: ON  (Filling)\r\n");
+            else        
+                uart0_tx_string("Pump: OFF (Full)\r\n");
+        }
+        else
+        {
+            if(pump_on) 
+                uart0_tx_string("Pump: FORCED ON\r\n");
+            else        
+                uart0_tx_string("Pump: FORCED OFF\r\n");
         }
         last_logged_pump = pump_on;
     }
